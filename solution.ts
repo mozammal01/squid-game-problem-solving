@@ -40,20 +40,23 @@ function fizzBuzz(num: number) {
 
 // ------------------------------ Solution 3 --------------------------------
 
-const array = [23, 43, 83, 45, 64]
-
 function findMax(arr: number[]) {
-  if (arr.length === 0) return null;
-  let max = arr[0];
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i]
-    }
-  }
-  return max
-}
+  if (arr.length > 0) {
 
-// console.log(findMax(array))
+    let max = arr[0];
+    for (let i = 1; i <= arr.length; i++) {
+      if (arr[i] > max) {
+        max = arr[i]
+      }
+    }
+    return max
+  }
+  else {
+    return "Array is empty"
+  }
+}
+// console.log(findMax([23, 43, 83, 45, 640]))
+
 
 
 // ------------------------------ Solution 4 --------------------------------
@@ -132,24 +135,23 @@ function findFactorial(num: number) {
 
 function EvenOrOdd(num: number[]) {
   const even = []
-  const odd = []
   if (num.length <= 100) {
     for (let i = 0; i < num.length; i++) {
       if (num[i] % 2 === 0) {
         even.push(num[i])
       }
-      else {
-        odd.push(num[i])
-      }
     }
-    return {even, odd}
+    if(even.length === 0){
+      return "There is no even number"
+    }
+    return even
   }
   else {
     return "Array length is greater than 100"
   }
 }
 
-// console.log(EvenOrOdd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+// console.log(EvenOrOdd([1, 3, 5, 70, 9]))
 
 
 // ---------------------------------- Solution 9 --------------------------------
